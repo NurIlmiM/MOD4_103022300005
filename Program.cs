@@ -17,17 +17,17 @@ public class KodeProduk
         { "Kamera", "E109" }
     };
 
-public static string GetKodeProduk(string elektronik)
-{
-    if (kodeProdukTable.ContainsKey(elektronik))
+    public static string GetKodeProduk(string elektronik)
     {
-        return kodeProdukTable[elektronik];
+        if (kodeProdukTable.ContainsKey(elektronik))
+        {
+            return kodeProdukTable[elektronik];
+        }
+        else
+        {
+            return "Kode produk tidak ditemukan";
+        }
     }
-    else
-    {
-        return "Kode produk tidak ditemukan";
-    }
-}
 }
 
 public class Program
@@ -42,3 +42,5 @@ public class Program
         Console.WriteLine($"Kode Produk untuk {elektronik} adalah {kodeProduk}");
     }
 }
+
+
